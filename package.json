@@ -1,0 +1,29 @@
+{
+  "name": "Todo-list",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oghenebrume50/Todo-list.git"
+  },
+  "keywords": [],
+  "author": "Raphael Noriode <raphlbrume@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oghenebrume50/Todo-list/issues"
+  },
+  "homepage": "https://github.com/Oghenebrume50/Todo-list#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
+  }
+}
