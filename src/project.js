@@ -1,5 +1,3 @@
-import handleTodo from './todo';
-
 function project(name) {
   const todos = [];
   return {
@@ -12,12 +10,10 @@ const handleProject = (() => {
   const storage = window.localStorage;
 
   function saveProject(proj) {
-    console.log(proj + ' savingggggg');
     storage.setItem(proj.name, JSON.stringify(proj));
   }
 
   function createProject(projName) {
-    console.log(projName);
     const theProject = project(projName);
     saveProject(theProject);
   }
@@ -26,18 +22,16 @@ const handleProject = (() => {
     return JSON.parse(storage.getItem(projName));
   }
 
-  function renameProject(projName, newName) {
+  function addTodo(projName, newTodo) {
     const theProject = getProject(projName);
-    theProject.editName(newName);
+    const id = theProject.todos.length + 1;
+    theProject.todos.push({ id, ...newTodo });
+    saveProject(theProject);
   }
 
-  function addTodo(projName, newTodo) {
-    console.log('in hereeee');
+  function deleteTodo(projName, todoId) {
     const theProject = getProject(projName);
-    console.log(theProject);
-    //const newTodo = handleTodo.createTodo(...todoDetails);
-    theProject.todos.push(newTodo);
-    console.log(theProject);
+    theProject.todos.splice(todoId - 1, 1);
     saveProject(theProject);
   }
 
@@ -49,7 +43,7 @@ const handleProject = (() => {
   return {
     createProject,
     addTodo,
-    renameProject,
+    deleteTodo,
     getProject,
     deleteProject,
   };
