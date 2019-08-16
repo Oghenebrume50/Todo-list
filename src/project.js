@@ -1,34 +1,29 @@
-import todo from './todo';
+import handleTodo from './todo';
 
 function project(name) {
-  let projName = name;
-  const projTodos = [];
-
-  const editName = (newName) => { projName = newName; };
-  const addTodo = (task) => { projTodos.push(task); };
+  const todos = [];
   return {
-    projTodos,
-    projName,
-    editName,
-    addTodo,
+    todos,
+    name,
   };
 }
 
 const handleProject = (() => {
   const storage = window.localStorage;
 
-  function saveProject(projName) {
-    const newProj = project(projName);
-    storage.setItem(projName, newProj);
+  function saveProject(proj) {
+    console.log(proj + ' savingggggg');
+    storage.setItem(proj.name, JSON.stringify(proj));
   }
 
-  function createProject() {
-    const newProjName = document.getElementById('project-name').value;
-    saveProject(newProjName);
+  function createProject(projName) {
+    console.log(projName);
+    const theProject = project(projName);
+    saveProject(theProject);
   }
 
   function getProject(projName) {
-    return storage.getItem(projName);
+    return JSON.parse(storage.getItem(projName));
   }
 
   function renameProject(projName, newName) {
@@ -36,9 +31,14 @@ const handleProject = (() => {
     theProject.editName(newName);
   }
 
-  function addTodo(projName, task) {
+  function addTodo(projName, newTodo) {
+    console.log('in hereeee');
     const theProject = getProject(projName);
-    theProject.addTodo(task);
+    console.log(theProject);
+    //const newTodo = handleTodo.createTodo(...todoDetails);
+    theProject.todos.push(newTodo);
+    console.log(theProject);
+    saveProject(theProject);
   }
 
   function deleteProject(projName) {
