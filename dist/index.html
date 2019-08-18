@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Todo list</title>
-</head>
-<body>
-  <form action="#" novalidate>
-    <input type="text" name="project-name" placeholder="Player 1's name" id="project-name" />
-  </form>
-    <input
-      type="submit"
-      id="submit-project"
-      value="Create Project"
-    />
-  <button id="todo">Todo</button>
-  <button id="deltodo">dekete</button>
-  <script type="text/javascript" src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Todo list</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" novalidate>
+        <input
+          type="text"
+          name="project-name"
+          placeholder="Your name"
+          id="project-name"
+        />
+        <button type="submit" id="submit-project">Create Project</button>
+        <button id="todo" class="btn-primary">Todo</button>
+        <button id="deltodo" class="btn-primary">Delete</button>
+      </form>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
 </html>

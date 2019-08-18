@@ -1,0 +1,31 @@
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 55vw;
+}
+
+.container form input {
+  width: 100%;
+  margin: 20px 0px;
+  height: 30px;
+}
+
+#submit-project,
+.btn-primary {
+  background-color: #242429c2;
+  color: white;
+  border: none;
+  height: 30px;
+}
+
+#submit-project:hover,
+.btn-primary:hover {
+  background-color: black;
+  transition: 1s;
+}
