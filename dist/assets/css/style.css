@@ -29,3 +29,33 @@ body {
   background-color: black;
   transition: 1s;
 }
+
+.card {
+  width: 300px;
+  min-height: 400px;
+  background-color: #fdf9f9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 5px;
+  box-shadow: 1px 1px 7px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-header {
+  width: 100%;
+}
+.card-title,
+.card-subtitle {
+  text-align: center;
+}
+
+.card-content {
+  width: 100%;
+}
+
+.card-footer {
+  align-self: flex-end;
+  text-align: center;
+}
