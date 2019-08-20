@@ -9,18 +9,63 @@
   </head>
   <body>
     <div class="container">
-      <form action="#" novalidate>
-        <input
-          type="text"
-          name="project-name"
-          placeholder="Project name"
-          id="project-name"
-        />
-        <button type="submit" id="submit-project">Create Project</button>
-        <button id="todo" class="btn-primary">Todo</button>
-        <button id="deltodo" class="btn-primary">Delete</button>
-      </form>
+        <div class="card-all-projects">
+          <div class="card-header">
+            <h3 class="card-title">All projects</h3>
+          </div>
+          <div class="card-content">
+            <ul id="projects-list"></ul>
+          </div>
+          <div class="card-footer">
+            <form action="#" novalidate>
+              <input
+                type="text"
+                name="project-name"
+                placeholder="Project name"
+                id="project-name"
+              />
+              <button type="submit" id="submit-project">Create Project</button>
+            </form>
+          </div>
+        </div>
+          <div class="card-project-todos">
+            <div class="card-header">
+              <h3 class="card-title">project title</h3>
+              <h4 class="card-subtitle">To do list</h4>
+            </div>
+            <div class="card-content">
+              <ul id="project-todos">
+                <li>
+                  tsting one two three <span>Due: 1-05-2019</span>
+                  <span><a href="#">X</a> </span>
+                </li>
+              </ul>
+            </div>
+            <div class="todo-form todo-form-hide" id="add-todo-form">
+              <form action="#" novalidate>
+                <input type="text" name="todo-title" placeholder="title"
+                  id="todo-title"
+                />
+                <textarea id="todo-desc" placeholder="Description"></textarea>
+                <input type="date" name="todo-due-date" placeholder="2222-05-01"
+                  id="todo-due-date">
+                <select id="todo-priority">
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                </select>
+                <div>
+                  <input type="checkbox" name="todo-done" value="" id="todo-done">
+                  done?
+                </div>
+              </form>
+              <button type="submit" id="add-todo-button">Add todo</button>
+            </div>
+            <div class="card-footer">
+              <button id="add-new-todo" class="btn-primary">Add new Todo</button>
+            </div>
+          </div>
     </div>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 </html>

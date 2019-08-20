@@ -35,17 +35,11 @@ const handleProject = (() => {
     saveProject(theProject);
   }
 
-  function deleteProject(projName) {
-    storage.removeItem(projName);
-  }
-
-
   return {
     createProject,
     addTodo,
     deleteTodo,
     getProject,
-    deleteProject,
   };
 })();
 

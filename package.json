@@ -25,5 +25,8 @@
     "eslint-plugin-import": "^2.18.2",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "date-fns": "^2.0.0"
   }
 }
