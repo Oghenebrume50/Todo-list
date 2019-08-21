@@ -5,7 +5,7 @@ let id = 'project-1';
 function displayProjects() {
   const projectList = document.getElementById('projects-list');
   for (let i = 0; i < window.localStorage.length; i += 1) {
-    projectList.innerHTML += `<li id="project-${i + 1}">${window.localStorage.key(i)}</li>`;
+    projectList.innerHTML += ` <button id="project-${i + 1}" class="project-button">${window.localStorage.key(i)}</button>`;
   }
 }
 
@@ -17,9 +17,18 @@ function viewAProject() {
   const todoObj = handleProject.getProject(projectLi.innerText);
   todoList.innerHTML = '';
   for (let i = 0; i < todoObj.todos.length; i += 1) {
-    todoList.innerHTML += `<li>${todoObj.todos[i].title} <span>Due: ${todoObj.todos[i].dueDate}</span>
-                            <span id="todo-span-${i}"><a href="#" id="todo-${i}">X</a> </span>
-                          </li>`;
+    todoList.innerHTML += `<div class="todo-item">
+    <button class="todo-item-button">${todoObj.todos[i].title}</button>
+    <span>Due: ${todoObj.todos[i].dueDate}</span>
+    <button href="#" class="btn-warning">Edit</button> |
+    <button href="#" class="btn-danger">Delete</button>
+    <div class="description-container">
+      <p>
+        ${todoObj.todos[i].description}
+      </p>
+    </div>
+  </div>
+  <hr />`;
   }
 }
 
@@ -28,9 +37,18 @@ function initialProjectView() {
   const todoObj = handleProject.getProject(currentProject);
   todoList.innerHTML = '';
   for (let i = 0; i < todoObj.todos.length; i += 1) {
-    todoList.innerHTML += `<li>${todoObj.todos[i].title} <span>Due: ${todoObj.todos[i].dueDate}</span>
-                          <span id="todo-span-${i}"><a href="#" id="todo-${i}">X</a> </span>
-                        </li>`;
+    todoList.innerHTML += `<div class="todo-item">
+    <button class="todo-item-button">${todoObj.todos[i].title}</button>
+    <span>Due: ${todoObj.todos[i].dueDate}</span>
+    <button href="#" class="btn-warning">Edit</button> |
+    <button href="#" class="btn-danger">Delete</button>
+    <div class="description-container">
+      <p>
+        ${todoObj.todos[i].description}
+      </p>
+    </div>
+  </div>
+  <hr />`;
   }
 }
 
