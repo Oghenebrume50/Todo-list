@@ -9,13 +9,13 @@ function project(name) {
 const handleProject = (() => {
   const storage = window.localStorage;
 
-  function saveProject(proj) {
-    storage.setItem(proj.name, JSON.stringify(proj));
+  function saveProject(name, proj) {
+    storage.setItem(name, JSON.stringify(proj));
   }
 
   function createProject(projName) {
     const theProject = project(projName);
-    saveProject(theProject);
+    saveProject(projName, theProject);
   }
 
   function getProject(projName) {
@@ -26,7 +26,7 @@ const handleProject = (() => {
     const theProject = getProject(projName);
     const id = theProject.todos.length + 1;
     theProject.todos.push({ id, ...newTodo });
-    saveProject(theProject);
+    saveProject(projName, theProject);
   }
 
   function deleteTodo(projName, todoId) {

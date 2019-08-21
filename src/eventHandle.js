@@ -1,11 +1,12 @@
 import handleTodo from './todo';
 import handleProject from './project';
-import { displayProjects, viewAProject } from './displayHandle';
+import { displayProjects, viewAProject, getCurrentProject, getId } from './displayHandle';
 
 function addListenerToProject() {
-  const projectList = document.getElementById('projects-list');
-  projectList.lastChild.addEventListener('click', viewAProject);
-  console.log(projectList.lastChild);
+  const projectList = [...document.getElementById('projects-list').children];
+  projectList.forEach((project) => {
+    project.addEventListener('click', viewAProject);
+  });
 }
 
 function submitProject() {
@@ -21,31 +22,47 @@ function submitProject() {
 function addTodotoProject() {
   const todo = document.getElementById('add-new-todo');
   const todoForm = document.getElementById('add-todo-form');
-  const todoTitle = document.getElementById('todo-title').value;
-  const todoDesc = document.getElementById('todo-desc').innerText;
-  const todoDate = document.getElementById('todo-due-date').value;
-  const todoPriority = document.getElementById('todo-priority').value;
-  const todoDone = document.getElementById('todo-done').checked;
-
+  const addTodo = document.getElementById('add-todo-button');
   todo.addEventListener('click', () => {
     todoForm.classList.remove('todo-form-hide');
     todoForm.classList.add('todo-form-show');
-    console.log(todoTitle, todoDesc, todoDate, todoPriority, todoDone);
-    const newTodo = handleTodo.createTodo('Sweet3', 'description', 'dueDate', 'priority', false);
-    handleProject.addTodo('default project', newTodo);
+  });
+
+  addTodo.addEventListener('click', () => {
+    const proj = document.getElementById(getId());
+    const todoTitle = document.getElementById('todo-title').value;
+    const todoDesc = document.getElementById('todo-desc').innerText;
+    const todoDate = document.getElementById('todo-due-date').value;
+    const todoPriority = document.getElementById('todo-priority').value;
+    const todoDone = document.getElementById('todo-done').checked;
+    const newTodo = handleTodo.createTodo(todoTitle, todoDesc, todoDate, todoPriority, todoDone);
+    handleProject.addTodo(getCurrentProject(), newTodo);
+    todoForm.classList.remove('todo-form-show');
+    todoForm.classList.add('todo-form-hide');
+    viewAProject.call(proj);
   });
 }
 
 function deleteTodoFromProject() {
-  const todo = document.getElementById('deltodo');
-  todo.addEventListener('click', () => {
-    handleProject.deleteTodo('good', 2);
-  });
+  const todoList = [...document.getElementById('project-todos').children];
+
+  for (let i = 0; i < todoList.length; i += 1) {
+    const delButton = document.querySelector(`#todo-span-${i} #todo-${i}`);
+    delButton.addEventListener('click', () => {
+      handleProject.deleteTodo(getCurrentProject(), 2);
+    });
+    console.log(delButton);
+  }
+  //const todo = document.getElementById('deltodo');
+  // todo.addEventListener('click', () => {
+  //   handleProject.deleteTodo('good', 2);
+  // });
 }
 
 function defaultProject() {
-  console.log('defaullll');
-  handleProject.createProject('default project');
+  if (window.localStorage.length === 0) {
+    handleProject.createProject('default project');
+  }
 }
 
 export { defaultProject, submitProject, addTodotoProject, deleteTodoFromProject };
