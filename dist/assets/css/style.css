@@ -85,8 +85,13 @@ body {
   text-align: center;
 }
 
-.todo-form-hide {
+.todo-form-hide,
+.hide {
   display: none;
+}
+
+.show {
+  display: block;
 }
 
 .todo-form-show {
