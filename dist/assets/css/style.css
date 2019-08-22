@@ -128,7 +128,7 @@ body {
   margin: 5px 0px;
 }
 
-#add-todo-button {
+#add-todo-button, #submit-edit-todo-button {
   margin: 10px auto;
 }
 
@@ -166,6 +166,15 @@ body {
 .description-container {
   padding-left: 10px;
 }
+
+.high-priority {
+  background-color: #d43f3a;
+}
+
+.done-task {
+  background-color: green;
+}
+
 /*button styling*/
 .btn-warning {
   height: 30px;

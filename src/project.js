@@ -31,8 +31,20 @@ const handleProject = (() => {
 
   function deleteTodo(projName, todoId) {
     const theProject = getProject(projName);
-    theProject.todos.splice(todoId - 1, 1);
-    saveProject(theProject);
+    theProject.todos.splice(todoId, 1);
+    saveProject(projName, theProject);
+  }
+
+  function getTodo(projName, todoId) {
+    const theProject = getProject(projName);
+    const theTodo = theProject.todos.slice(todoId, todoId + 1);
+    return theTodo[0];
+  }
+
+  function editTodo(projName, todoId, todo) {
+    const theProject = getProject(projName);
+    theProject.todos.splice(todoId, 1, todo);
+    saveProject(projName, theProject);
   }
 
   return {
@@ -40,6 +52,8 @@ const handleProject = (() => {
     addTodo,
     deleteTodo,
     getProject,
+    getTodo,
+    editTodo,
   };
 })();
 

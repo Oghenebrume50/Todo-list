@@ -27,27 +27,11 @@
         </div>
       </div>
       <div class="card-project-todos">
-        <div class="card-header" id="project-todos">
-          <h3 class="card-title">project title</h3>
+        <div class="card-header">
+          <h3 class="card-title" id="project-title">project title</h3>
           <h4 class="card-subtitle">To do list</h4>
         </div>
-        <div id="project-todos" class="card-content">
-          <!-- <div class="todo-item">
-            <button class="todo-item-button">Testing</button>
-            <span>Due: 1-05-2019</span>
-            <button href="#" class="btn-warning">Edit</button> |
-            <button href="#" class="btn-danger">Delete</button>
-            <div class="description-container">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Accusamus enim quam, praesentium quo ab officia obcaecati facere
-                qui asperiores vel consectetur ipsa ratione reprehenderit animi
-                quae! Deserunt fuga sunt commodi!
-              </p>
-            </div>
-          </div>
-          <hr /> -->
-        </div>
+        <div id="project-todos" class="card-content"></div>
         <div class="todo-form todo-form-hide" id="add-todo-form">
           <form action="#" novalidate class="todo-form">
             <input
@@ -76,8 +60,36 @@
             Add to list
           </button>
         </div>
+        <div class="todo-form todo-form-hide" id="edit-todo-form">
+          <form action="#" novalidate class="todo-form">
+            <input
+              type="text"
+              name="todo-title"
+              placeholder="title"
+              id="edit-todo-title"
+            />
+            <input
+              type="date"
+              name="todo-due-date"
+              placeholder="2222-05-01"
+              id="edit-todo-due-date"
+            />
+            <textarea id="edit-todo-desc" placeholder="Description"></textarea>
+            <label for="edit-todo-priority"> Choose priority level </label>
+            <select id="edit-todo-priority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <label for="todo-done">Are you done with the task?</label>
+            <input type="checkbox" name="todo-done" value="" id="edit-todo-done" />
+          </form>
+          <button type="submit" id="submit-edit-todo-button">
+            Submit
+          </button>
+        </div>
         <div class="card-footer">
-          <button id="add-new-todo" class="btn-primary">Add new Todo</button>
+          <button id="add-new-todo" class="btn-primary">Add New Todo</button>
         </div>
       </div>
     </div>
