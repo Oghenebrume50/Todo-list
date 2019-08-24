@@ -1,0 +1,201 @@
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* .container form input {
+  width: 100%;
+  margin: 20px 0px;
+  height: 30px;
+} */
+
+#submit-project,
+.btn-primary {
+  background-color: #242429c2;
+  color: white;
+  border: none;
+  height: 30px;
+}
+
+#submit-project:hover,
+.btn-primary:hover {
+  background-color: black;
+  transition: 1s;
+}
+
+.card-all-projects {
+  width: 250px;
+  min-height: 300px;
+  background-color: #fdf9f9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 5px;
+  box-shadow: 1px 1px 7px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-project-todos {
+  width: 600px;
+  min-height: 300px;
+  background-color: #fdf9f9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 5px;
+  box-shadow: 1px 1px 7px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-header {
+  width: 100%;
+}
+.card-title,
+.card-subtitle {
+  text-align: center;
+}
+
+.card-content {
+  width: 100%;
+}
+
+.card-content ul li span {
+  font-weight: bold;
+  margin: 0px 4px;
+}
+
+.card-content ul li span a {
+  color: black;
+  text-decoration: none;
+}
+
+.card-content ul li span a:hover {
+  text-decoration: underline;
+}
+.card-footer,
+.todo-form {
+  align-self: flex-end;
+  text-align: center;
+}
+
+.todo-form-hide,
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.todo-form-show {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.todo-form-show form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*todo form styling*/
+.todo-form input,
+.todo-form textarea {
+  width: 70%;
+  margin: 5px 0px;
+  height: 30px;
+  border-radius: 3px;
+  display: block;
+}
+
+.todo-form select {
+  width: 40%;
+  height: 30px;
+  margin: 5px;
+}
+
+.todo-form label {
+  width: 80%;
+  margin: 5px 0px;
+}
+
+#add-todo-button, #submit-edit-todo-button {
+  margin: 10px auto;
+}
+
+/*project list styling*/
+.project-button {
+  width: 100%;
+  height: 30px;
+  font-size: medium;
+  border: none;
+  text-align: left;
+}
+
+.project-button:hover {
+  background-color: #242429c2;
+  color: white;
+  transition-duration: 1s;
+}
+
+/*todo-item*/
+.todo-item-button {
+  width: 40%;
+  height: 30px;
+  font-size: medium;
+  border: none;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.todo-item-button:hover {
+  background-color: #242429c2;
+  color: white;
+  transition-duration: 1s;
+}
+
+.description-container {
+  padding-left: 10px;
+}
+
+.high-priority {
+  background-color: #d43f3a;
+}
+
+.done-task {
+  background-color: green;
+}
+
+/*button styling*/
+.btn-warning {
+  height: 30px;
+  background-color: #f0ad4e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-warning:hover {
+  background-color: #d58512;
+}
+
+.btn-danger {
+  height: 30px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-danger:hover {
+  background-color: #d43f3a;
+}
