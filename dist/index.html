@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Todo list</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card-all-projects">
+        <div class="card-header">
+          <h3 class="card-title">All projects</h3>
+        </div>
+        <div class="card-content" id="projects-list"></div>
+        <div class="card-footer">
+          <form action="#" novalidate>
+            <input
+              type="text"
+              name="project-name"
+              placeholder="Project name"
+              id="project-name"
+            />
+            <button type="submit" id="submit-project">Create Project</button>
+          </form>
+        </div>
+      </div>
+      <div class="card-project-todos">
+        <div class="card-header">
+          <h3 class="card-title" id="project-title">project title</h3>
+          <h4 class="card-subtitle">To do list</h4>
+        </div>
+        <div id="project-todos" class="card-content"></div>
+        <div class="todo-form todo-form-hide" id="add-todo-form">
+          <form action="#" novalidate class="todo-form">
+            <input
+              type="text"
+              name="todo-title"
+              placeholder="title"
+              id="todo-title"
+            />
+            <input
+              type="date"
+              name="todo-due-date"
+              placeholder="2222-05-01"
+              id="todo-due-date"
+            />
+            <textarea id="todo-desc" placeholder="Description"></textarea>
+            <label for="todo-priority"> Choose priority level </label>
+            <select id="todo-priority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <label for="todo-done">Are you done with the task?</label>
+            <input type="checkbox" name="todo-done" value="" id="todo-done" />
+          </form>
+          <button type="submit" id="add-todo-button">
+            Add to list
+          </button>
+        </div>
+        <div class="todo-form todo-form-hide" id="edit-todo-form">
+          <form action="#" novalidate class="todo-form">
+            <input
+              type="text"
+              name="todo-title"
+              placeholder="title"
+              id="edit-todo-title"
+            />
+            <input
+              type="date"
+              name="todo-due-date"
+              placeholder="2222-05-01"
+              id="edit-todo-due-date"
+            />
+            <textarea id="edit-todo-desc" placeholder="Description"></textarea>
+            <label for="edit-todo-priority"> Choose priority level </label>
+            <select id="edit-todo-priority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <label for="todo-done">Are you done with the task?</label>
+            <input type="checkbox" name="todo-done" value="" id="edit-todo-done" />
+          </form>
+          <button type="submit" id="submit-edit-todo-button">
+            Submit
+          </button>
+        </div>
+        <div class="card-footer">
+          <button id="add-new-todo" class="btn-primary">Add New Todo</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+  </body>
+</html>
