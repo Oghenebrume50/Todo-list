@@ -14,4 +14,4 @@ Used Webpack and Local Storage
 ## How to run Locally
 - Clone repository
 - `cd Todo-list`
-- npm run build 
+- `npm run build` 
